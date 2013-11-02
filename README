@@ -1,1 +1,11 @@
-This is the README file.
+README as of 11.2.2013
+
+apps/ - contains all the different apps (ie. modules/ functionalities) under the site
+bin/ - Stores all bash scripts to automate deployment and testing
+config/ - Stores all configuration files for databases, webservers, celery, supervisor, munin, etc.
+media/ - User generated static media assets such as photos
+static/ - Non-user generated static media assets including CSS, Javascript, and images. 
+templates/ - Site-wide Django templates
+vendor/ - Any external dependencies installed via Pip (Balanced will go here)
+
+apps/ contains:
