@@ -8,4 +8,104 @@ static/ - Non-user generated static media assets including CSS, Javascript, and 
 templates/ - Site-wide Django templates
 vendor/ - Any external dependencies installed via Pip (Balanced will go here)
 
-apps/ contains:
+apps/ - contains:
+
+*** USE DJANGO DEFAULT *** users/ - App for managing users (using Django's built-in functionality)
+
+ students/ 
+ 		- create student
+ 		- disable student
+		- accept student 
+		- reject student
+		- waitlist student
+
+companies/
+		- create company
+		- disable company
+		- accept company
+		- reject company
+		- waitlist company
+
+	student-profiles/ - Displays student profile
+		- select * from student with certain student ID (currently logged in)
+		- select * from ratings with certain student ID (currently logged in)
+		- select * from reviews with certain student ID (currently logged in)
+		- select * from projects with certain student ID (currently logged in)
+		- update * any info from student profile
+
+	company-profiles/ - Displays company profile
+		- select * from company with certain company ID (currently logged in)
+		- select * from ratings with certain company ID (currently logged in)
+		- select * from reviews with certain company ID (currently logged in)
+		- update * any info from company profile
+
+-------------------------------------------------------------------------------------------------
+
+*** USE DJANGO USER AUTH *** settings/ - App for managing user settings (password, email, URL)
+		- select * from user (?) for email and password
+		- update email and password
+		- delete account 
+
+	account/ - App for managing account with or without Balanced
+		- select * from user(?) for balanced info
+		- update balanced info
+
+	referrals/ - App for managing referrals/ referral systems
+		- create referral URL for original student
+		- delete user 
+
+	project-list/ - Generic app for listing projects
+		- select * from projects based on company ID (all projects for this company)
+		- select * from projects based on student ID (all projects for this student)
+		- select * from students based on project ID (all students working on this project)
+
+*** USE EXTERNAL PROJECT TOOL *** project-search/ - App for searching projects
+		- select * from projects (lists all projects)
+		- select * from projects that are pending
+		- select * from projects that are past
+		- select * from projects that are current
+
+*** USE EXTERNAL SEARCH TOOL *** student-search/ - App for searching students
+		- select * from students for availability
+		- search + list all students (select * from students)
+		- select * from students 
+
+	project-actions/ - App for project actions
+		- offer project (company)
+		- accept project (student)
+		- reject project (student)
+		- delete project (company)
+		- edit project (company)
+
+	new-project - App for creating project
+
+*** USE DJANGO DEFAULT *** emails/ - App for sending emails
+		- email all pending students
+		- email all accepted students
+		- email all accepted companies
+		- email all people involved in one project
+		- email company based on project
+		- email student(s) based on project
+
+*** USE DJANGO DEFAULT *** messages/ - App for managing user messaging system
+		- create message
+		- delete message
+		- update/edit message 
+		- send message
+
+	interviews/ - App for managing and displaying interviews
+		- create interviews for a project
+		- sign up for interview times for a project
+		- update (edit) interview times for a project
+
+	ratings/ - App for managing ratings
+		- create rating
+		- save rating
+		- update rating
+		- delete rating
+
+	reviews/ - App for managing reviews
+		- create reviews
+		- save reviews
+		- update reviews
+		- delete reviews
