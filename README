@@ -49,9 +49,10 @@ companies/
 	account/ - App for managing account with or without Balanced
 		- select * from user(?) for balanced info
 		- update balanced info
+		- calculate user's balance history (payments + "total $ made")
 
 	referrals/ - App for managing referrals/ referral systems
-		- create referral URL for original student
+		- create referral URL for original studentx
 		- delete user 
 
 	project-list/ - Generic app for listing projects
