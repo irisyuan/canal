@@ -1,0 +1,140 @@
+{% load staticfiles %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+	<head>
+		<title> {%block pagetitle %} Canal | Internships {% endblock %}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="description" lang="en" content="Canal internships">
+	    <meta name="keywords" content="canal, students, internships, opencanal">
+	    <meta property="og:title" content="Canal | Internships"/>
+	    <meta property="og:type" content="website"/>
+	    <meta property="og:url" content="http://www.opencanal.com"/>
+	    <meta property="og:site_name" content="Canal"/>
+	    <meta property="og:description" content="Canal internships"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<link rel="shortcut icon" href="/favicon.ico" type="image/ico">
+		<link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/static/canal.css">
+
+	</head>
+
+	<body>
+{%block menu %}
+	<div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+              
+                <a href="/" class="brand"><img src="/static/logo.jpg" id="logo"></a>
+{%block sign-in-link %}
+                 <a href="#" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse"  id="sign-in-level">
+                    <span class="icon-th-list">Sign In</span>
+                </a>
+                 <a href="http://www.opencanal.com/about" target="_blank" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse" id="about-level" >
+                    <span class="icon-th-list">About</span>
+                </a>
+                
+                <div class="nav-collapse collapse">
+                    <ul class="nav center" id="login">
+                        <li>Email Password Sign In</li>
+                    </ul>
+                </div>
+{%endblock%}
+
+            </div>
+        </div>
+    </div>
+{%endblock %}
+
+		<div class="hero-unit" id="main">
+			<div class="container row-fluid">
+
+{%block main %}
+			<div class="row-fluid center" id="start-apply">
+					<div class="span3" id="user-identify">Are you a </div>
+					<div class="span3 choose" id="student-start">student</div>
+					<div class="span3 choose" id="divider">|</div>
+					<div class="span3 choose" id="company-start">company</div>
+				
+  			</div>
+
+
+  			<div class="row-fluid center" id="student-apply">
+					<div class="span3" id="student-identify">Select one below</div>
+					
+					<div class="span3 student-choose center" id="designer-start" onclick ="clickHandler()">
+						<p class="student-title">Designer</p>
+						<p class="student-title-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+						</p>
+					</div>
+					<div class="span3 student-choose center" id="hacker-start" onclick ="clickHandler()">
+						<p class="student-title">Hacker</p>
+						<p class="student-title-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+						</p>
+					</div>
+					<div class="span3 student-choose center" id="hustler-start" onclick ="clickHandler()">
+						<p class="student-title">Hustler</p>
+
+						<p class="student-title-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+						</p>
+					</div>
+
+
+
+  			</div>
+
+
+  			<div class="span12 center" id="landing-caption">We'll take care of your internship experiences. </div>
+			</div>
+
+		</div>
+		<hr style="margin-bottom:0px;">
+{%endblock %}
+<!--
+		<div id="footer" class="container">
+			<div class="row-fluid center">
+				
+				<ul class="nav inline">
+				<li><a class="footer-space" href="/about">About Canal</a> | </li>
+				<li><a class="footer-space" href="/refer">Refer</a> | </li>
+				<li><a class="footer-space" href="http://www.dock.opencanal.com">Blog</a> | </li>
+				<li><a class="footer-space" href="/faq">FAQ</a> | </li>
+				<li><a class="footer-space" href="/resources">Resources</a> | </li>
+				<li><a class="footer-space" href="/media">Media</a> | </li>
+				<li><a class="footer-space" href="/termsofuse">Terms of Use</a> | </li>
+				<li><a class="footer-space" href="/privacy">Privacy</a> | </li>
+				<li><a class="footer-space" href="mailto:hello@opencanal.com">hello@opencanal.com</a> </li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	-->
+
+	<div id="footer" class="container">
+			<div class="row-fluid center">
+				
+				<ul class="nav inline">
+				<li><a class="footer-space" href="http://www.opencanal.com/about">About Canal</a> | </li>
+				<li><a class="footer-space" href="http://www.opencanal.com/refer">Refer</a> | </li>
+				<li><a class="footer-space" href="http://www.dock.opencanal.com">Blog</a> | </li>
+				<li><a class="footer-space" href="http://www.opencanal.com/faq">FAQ</a> | </li>
+				<li><a class="footer-space" href="http://www.opencanal.com/resources">Resources</a> | </li>
+				<li><a class="footer-space" href="http://www.opencanal.com/media">Media</a> | </li>
+				<li><a class="footer-space" href="http://www.opencanal.com/termsofuse">Terms of Use</a> | </li>
+				<li><a class="footer-space" href="http://www.opencanal.com/privacy">Privacy</a> | </li>
+				<li><a class="footer-space" href="mailto:hello@opencanal.com">hello@opencanal.com</a> </li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script src="/static/bootstrap.js"></script>
+		<script src="/static/canal.js"></script>
+
+	
+	</body>
+</html>
