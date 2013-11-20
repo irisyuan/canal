@@ -1,30 +1,51 @@
-README as of 11.2.2013
+README as of 11.1.2013
 
 apps/ - contains all the different apps (ie. modules/ functionalities) under the site
+
 bin/ - Stores all bash scripts to automate deployment and testing
+
 config/ - Stores all configuration files for databases, webservers, celery, supervisor, munin, etc.
+
 media/ - User generated static media assets such as photos
+
 static/ - Non-user generated static media assets including CSS, Javascript, and images. 
-templates/ - Site-wide Django templates
-vendor/ - Any external dependencies installed via Pip (Balanced will go here)
+
+templates/ - Site-wide templates
+
+vendor/ - Any external dependencies installed via Pip (Balanced is integrated here)
 
 apps/ - contains:
 
-*** USE DJANGO DEFAULT *** users/ - App for managing users (using Django's built-in functionality)
+*** USE USER-AUTH DEFAULT *** 
 
- students/ 
+	users/ - App for managing users (using Django's built-in functionality)
+	login will be through the index.html page and not any separate opencanal.com/login or opencanal.com/logout pages
+	
+
+flat_app / 
+- serves up about, faq, terms of use, privacy, media, resources
+
+case-studies /
+- app for case studies
+
+	students/ 
  		- create student
  		- disable student
 		- accept student 
 		- reject student
 		- waitlist student
 
-companies/
+	companies/
 		- create company
 		- disable company
 		- accept company
 		- reject company
 		- waitlist company
+
+	designator / - App for segregating students and future portfolios based on talent
+		- break this down into future modules specifically for DES/HACK/HUS
+		- ie. for designer APIs for dribbbble, behanced, etc.
+		- in general, APIs for linkedin, social media
 
 	student-profiles/ - Displays student profile
 		- select * from student with certain student ID (currently logged in)
@@ -39,9 +60,7 @@ companies/
 		- select * from reviews with certain company ID (currently logged in)
 		- update * any info from company profile
 
--------------------------------------------------------------------------------------------------
-
-*** USE DJANGO USER AUTH *** settings/ - App for managing user settings (password, email, URL)
+*** USE USER AUTH *** settings/ - App for managing user settings (password, email, URL)
 		- select * from user (?) for email and password
 		- update email and password
 		- delete account 
@@ -53,20 +72,22 @@ companies/
 
 	referrals/ - App for managing referrals/ referral systems
 		- create referral URL for original studentx
-		- delete user 
+		- delete referral
+		- edit referral
+		- include with application system (normal student) 
 
 	project-list/ - Generic app for listing projects
 		- select * from projects based on company ID (all projects for this company)
 		- select * from projects based on student ID (all projects for this student)
 		- select * from students based on project ID (all students working on this project)
 
-*** USE EXTERNAL PROJECT TOOL *** project-search/ - App for searching projects
+*** USE EXTERNAL PROJECT APPS (project-list) *** project-search/ - App for searching projects
 		- select * from projects (lists all projects)
 		- select * from projects that are pending
 		- select * from projects that are past
 		- select * from projects that are current
 
-*** USE EXTERNAL SEARCH TOOL *** student-search/ - App for searching students
+*** *** student-search/ - App for searching students
 		- select * from students for availability
 		- search + list all students (select * from students)
 		- select * from students 
@@ -78,9 +99,7 @@ companies/
 		- delete project (company)
 		- edit project (company)
 
-	new-project - App for creating project
-
-*** USE DJANGO DEFAULT *** emails/ - App for sending emails
+*** USE EMAIL DEFAULT *** emails/ - App for sending emails
 		- email all pending students
 		- email all accepted students
 		- email all accepted companies
@@ -88,7 +107,7 @@ companies/
 		- email company based on project
 		- email student(s) based on project
 
-*** USE DJANGO DEFAULT *** messages/ - App for managing user messaging system
+*** USE USER-AUTH DEFAULT *** messages/ - App for managing user messaging system
 		- create message
 		- delete message
 		- update/edit message 
@@ -98,6 +117,20 @@ companies/
 		- create interviews for a project
 		- sign up for interview times for a project
 		- update (edit) interview times for a project
+
+	images/ - App for managing and displaying static images
+		- student image upload
+		- company logo upload
+		- profile search with images
+		- edit and crop into thumbnails
+		- delete images
+
+	compensation/ - App for managing and displaying compensation on new project
+		- calculate hourly wages, weekly, biweekly etc. through several functions 
+
+	date-manipulation / - App for manipulating dates and timeframes
+		- allows for more flexible client input
+		- include several string manipulation functions
 
 	ratings/ - App for managing ratings
 		- create rating
